@@ -1,0 +1,10 @@
+{
+	"name": "phoenix-bbcode",
+	"version": "1.4.0",
+	"main": "bbcode",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/FurAffinity/bbcode"
+	},
+	"license": "ISC"
+}
