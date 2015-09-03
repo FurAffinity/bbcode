@@ -1,10 +1,14 @@
 {
 	"name": "phoenix-bbcode",
 	"version": "1.4.0",
+	"bugs": {
+		"url": "https://github.com/FurAffinity/bbcode/issues"
+	},
+	"license": "ISC",
+	"files": ["bbcode.js"],
 	"main": "bbcode",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/FurAffinity/bbcode"
-	},
-	"license": "ISC"
+	}
 }
