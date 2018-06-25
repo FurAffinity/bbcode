@@ -5,8 +5,7 @@
 		"url": "https://github.com/FurAffinity/bbcode/issues"
 	},
 	"license": "ISC",
-	"files": ["bbcode.js"],
-	"main": "bbcode",
+	"files": ["index.js"],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/FurAffinity/bbcode"
