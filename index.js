@@ -156,6 +156,9 @@ function transform(closes, token, startNode, endNode) {
 
 			endNode.text = token.text;
 			return false;
+
+		default:
+			throw new Error('Unexpected');
 	}
 }
 

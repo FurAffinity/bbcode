@@ -1,0 +1,15 @@
+{
+	"parserOptions": {
+		"ecmaVersion": 3
+	},
+	"env": {
+		"commonjs": true
+	},
+	"extends": "@charmander/eslint-config-base",
+	"rules": {
+		"comma-dangle": ["error", {"arrays": "always-multiline"}],
+		"indent": ["error", "tab", {"SwitchCase": 1, "flatTernaryExpressions": true}],
+		"no-multi-spaces": "off",
+		"no-var": "off"
+	}
+}

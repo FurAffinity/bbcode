@@ -9,5 +9,8 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/FurAffinity/bbcode"
+	},
+	"devDependencies": {
+		"@charmander/eslint-config-base": "1.2.0"
 	}
 }

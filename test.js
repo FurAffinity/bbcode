@@ -1,3 +1,5 @@
+/* eslint-env node */
+/* eslint no-console: off */
 'use strict';
 
 var bbcode = require('./');
