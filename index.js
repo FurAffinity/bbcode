@@ -1,6 +1,6 @@
 'use strict';
 
-var URL = require('url');
+var parseUrl = require('url').parse;
 
 var allowedProtocols = [null, 'http:', 'https:', 'mailto:', 'irc:', 'ircs:'];
 
@@ -27,12 +27,11 @@ function escapeContent(value) {
 }
 
 function linkInfo(uri) {
-	var info = URL.parse(uri);
-	var hostParts = info.hostname && info.hostname.split('.').reverse();
+	var info = parseUrl(uri);
 
 	return {
 		allowed: allowedProtocols.indexOf(info.protocol) !== -1,
-		internal: info.protocol === null || (hostParts && hostParts[0] === 'net' && (hostParts[1] === 'furaffinity' || hostParts[1] === 'facdn'))
+		internal: info.hostname === null || /(?:^|\.)(?:furaffinity|facdn)\.net$/i.test(info.hostname)
 	};
 }
 
