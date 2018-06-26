@@ -1,9 +1,7 @@
 {
 	"name": "phoenix-bbcode",
 	"version": "1.4.0",
-	"bugs": {
-		"url": "https://github.com/FurAffinity/bbcode/issues"
-	},
+	"bugs": "https://github.com/FurAffinity/bbcode/issues",
 	"license": "ISC",
 	"files": ["index.js"],
 	"repository": {
@@ -12,5 +10,11 @@
 	},
 	"devDependencies": {
 		"@charmander/eslint-config-base": "1.2.0"
+	},
+	"scripts": {
+		"test": "node test"
+	},
+	"engines": {
+		"node": ">=6.0.0"
 	}
 }
