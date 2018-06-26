@@ -13,7 +13,7 @@ var testCases = [
 	{
 		name: 'escaping',
 		input: '[URL=http://example.com/&"]<>&[/URL]',
-		expected: '<a href="http://example.com/&amp;&quot;" rel="external nofollow">&lt;&gt;&amp;</a>'
+		expected: '<a href="http://example.com/&amp;&#34;" rel="external nofollow">&lt;>&amp;</a>'
 	},
 	{
 		name: 'unsafe links',

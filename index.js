@@ -17,14 +17,13 @@ var maximumStackSize = 20;
 function escapeAttributeValue(value) {
 	return value
 		.replace(/&/g, '&amp;')
-		.replace(/"/g, '&quot;');
+		.replace(/"/g, '&#34;');
 }
 
 function escapeContent(value) {
 	return value
 		.replace(/&/g, '&amp;')
-		.replace(/</g, '&lt;')
-		.replace(/>/g, '&gt;');
+		.replace(/</g, '&lt;');
 }
 
 function linkInfo(uri) {
