@@ -81,6 +81,7 @@ function tokenize(input) {
 			m[11] !== undefined ? { type: TEXT, text: symbols[m[11].toLowerCase()] } :
 			m[12] !== undefined ? { type: AUTOMATIC_LINK, text: text } :
 			m[13] !== undefined ? { type: SERIES_NAVIGATION, previous: m[13], first: m[14], next: m[15], text: text } :
+			/* istanbul ignore next: unreachable */
 			null;
 
 		tokens.push(token);
@@ -155,6 +156,7 @@ function transform(closes, token, startNode, endNode) {
 			endNode.text = token.text;
 			return false;
 
+		/* istanbul ignore next: unreachable */
 		default:
 			throw new Error('Unexpected');
 	}
@@ -336,6 +338,7 @@ function render(input, options) {
 				append(createSeriesNavigation(token));
 				break;
 
+			/* istanbul ignore next: unreachable */
 			default:
 				throw new Error('Unrecognized token type: ' + token.type);
 		}

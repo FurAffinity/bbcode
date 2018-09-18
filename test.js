@@ -21,6 +21,11 @@ var testCases = [
 		expected: '[URL=javascript:alert(1)]click[/URL]'
 	},
 	{
+		name: 'internal links',
+		input: '[url=/]click[/url]',
+		expected: '<a href="/">click</a>',
+	},
+	{
 		name: 'nested quotes',
 		input: '[QUOTE="some user"]And then I came across something extraordinary: [QUOTE=example]red green blue orange yellow[/QUOTE] Perplexing![/QUOTE]',
 		expected: '<blockquote><header><cite>some user</cite> wrote:</header> And then I came across something extraordinary: <blockquote><header><cite>example</cite> wrote:</header> red green blue orange yellow</blockquote> Perplexing!</blockquote>'
@@ -54,6 +59,11 @@ var testCases = [
 		name: 'automatic links',
 		input: 'Have you visited http://example.com/?',
 		expected: 'Have you visited <a href="http://example.com/" rel="external nofollow">http://example.com/</a>?'
+	},
+	{
+		name: 'automatic links, internal',
+		input: 'web https://furaffinity.net; CDN https://d.facdn.net/.',
+		expected: 'web <a href="https://furaffinity.net">https://furaffinity.net</a>; CDN <a href="https://d.facdn.net/">https://d.facdn.net/</a>.'
 	},
 	{
 		name: 'symbols',
@@ -109,6 +119,34 @@ var testCases = [
 		name: 'unnecessary nesting',
 		input: '[b][b]extra-bold?[/b][/b]',
 		expected: '<b>extra-bold?</b>'
+	},
+	{
+		name: 'excessive nesting',
+		input: '[quote]'.repeat(22) + '[/quote]'.repeat(22),
+		expected: '<blockquote>'.repeat(21) + '[quote]' + '</blockquote>'.repeat(21) + '[/quote]',
+	},
+	{
+		name: 'stranded closing tags',
+		input: 'text[/b]',
+		expected: 'text[/b]',
+	},
+	{
+		name: 'no text',
+		input: '',
+		options: {
+			automaticParagraphs: true
+		},
+		expected: '',
+	},
+	{
+		name: 'horizontal rule inside text',
+		input: 'a-----b',
+		expected: 'a<hr>b'
+	},
+	{
+		name: 'colors',
+		input: '[color=limegreen]limegreen[/color]\n[color=ff0000]red[/color]\n[color=#00f]blue[/COLOR]\n[color=invalid]no[/color]',
+		expected: '<span style="color: limegreen;">limegreen</span><br><span style="color: #ff0000;">red</span><br><span style="color: #00f;">blue</span><br>[color=invalid]no[/color]'
 	},
 ];
 
