@@ -232,6 +232,7 @@ function render(input, options) {
 				openTags.splice(closesIndex, 1);
 
 				var closingNode = append(null);
+				var afterClosingNode = append(null);
 
 				if (closes.redundant) {
 					closes.node.text = null;
@@ -243,7 +244,7 @@ function render(input, options) {
 
 				for (j = closesIndex; j < openTags.length; j++) {
 					openTags[j].closedOverBy.push({
-						insertOpeningNodeBefore: closingNode.next,
+						insertOpeningNodeBefore: afterClosingNode,
 						insertClosingNodeAfter: closingNode.prev
 					});
 				}

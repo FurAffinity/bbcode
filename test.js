@@ -51,6 +51,11 @@ var testCases = [
 		expected: '<i>one [url=javascript:two]three</i> four[/url]'
 	},
 	{
+		name: 'consecutive bad nesting',
+		input: '[i][b][s]text[/i][/b][/s]',
+		expected: '<i><b><s>text</s></b></i><b><s></s></b><s></s>',
+	},
+	{
 		name: 'user links',
 		input: ':iconexample: :exampleicon: :linkexample:',
 		expected: '<a href="/users/example/"><img src="/users/example/image"> example</a> <a href="/users/example/"><img src="/users/example/image"></a> <a href="/users/example/">example</a>'
